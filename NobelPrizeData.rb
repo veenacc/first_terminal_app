@@ -103,19 +103,24 @@ when "5"
 when "6"
   category_input = "physics"
 else
-  puts "invalid choice"
+  # puts "invalid choice"
+  
   category_input =""
 end
 
-puts "Which year information would you like? "
+puts "Which year information would you like? - Data available from 1901 to 2023"
 year_input =gets.chomp
-p category_input ,year_input
+# p category_input ,year_input
 
 ###################################################################################
 
 ####################### step 4 #######################################
 # calls the function that returns the requested information
-find_winner(year_input, category_input,dt)
+if year_input.to_i >=1901 && year_input.to_i<=2023 && category_input!= ""
+  find_winner(year_input, category_input,dt)
+else
+  p "Enter valid year / acategory"
+end
 #####################################################################
 
 
